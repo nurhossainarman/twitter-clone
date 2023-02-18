@@ -25,6 +25,8 @@ body{
 
 .mid{
     border: 1px solid rgb(75, 75, 75);
+    border-bottom: none;
+    height: fit-content;
     position: relative;
     font-size: 20px;
 }
@@ -61,9 +63,9 @@ body{
 
 .d1{
     display:flex; 
-    position: absolute; 
     width: 100%;
     margin-top: 15px;
+    height: fit-content;
 }
 
 .imgMargin{
@@ -72,23 +74,33 @@ body{
 
 .form1{
     position: relative;
-    height: 35vh;
+    height: fit-content;
     width: 100%;
 }
-textarea{
-    height: 20vh;
+.textarea {
+    height: fit-content;
     width: 95%;
-    color:lightgray;
+    color:lightgray;  
+}
+.tweet{
     border-bottom: 1px solid rgb(75, 75, 75) !important;
 }
 .tweet-button{
-    position: absolute;
     margin-top: 10px;
-    right: 0;
-    margin-right: 5%;
+    margin-left: 75%;
     cursor:pointer;
 }
 input[type="search"]{
     background-color: rgb(29,29,29); 
     color: lightgray;
 }
+
+.closingLine{
+    margin-top: 10px; border-bottom: 1px solid rgb(75, 75, 75);
+}
+
+.posts {
+    margin-bottom: 25px;
+    font-size: 25px;
+}
+

@@ -21,7 +21,7 @@
             
         </ul>
     </div>
-    <div class="aside mid">
+    <div class="aside mid" id="home-content">
         <div style= "height: 50px; 
                     border-bottom: 1px solid rgb(75, 75, 75);
                     ">
@@ -29,13 +29,15 @@
         </div>
         <div class="d1">
             <img src="dp.jpg" alt="DP" class="small-dp round imgMargin">
-            <form class="form1">
-            <textarea maxlength="280" type="text" placeholder="Whats on your mind" class="autosize borderless bgnone"></textarea>
+            <form class="form1" id="tweet">
+            <textarea id="myTweet" maxlength="280" type="text" placeholder="Whats on your mind" class="textarea autosize tweet borderless bgnone"></textarea>
             <div>
             <input type="submit" value="Tweet" class="tweet-button borderless b-radius padding bgaqua">
             </div>
             </form>
         </div>
+        <div class="closingLine"></div> <!--After tweet-->
+        
         
     </div>
     <div class="aside">
@@ -52,5 +54,6 @@
     <script>
         autosize(document.querySelectorAll('.autosize'));
     </script>
+    <script src="app.js"></script>
 </body>
 </html>
