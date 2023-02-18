@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="aside">
+        <ul style=" list-style: none; margin-left: 80px;">
+            <li><a href="#" >Home</a> </li>
+            <li><a href="#" >Notification</a> </li>
+            <li><a href="#" >Profile</a> </li>
+            <li><a href="#" >Logout</a> </li>
+            
+        </ul>
+    </div>
+    <div class="aside mid">
+        <div style= "height: 50px; 
+                    border-bottom: 1px solid rgb(75, 75, 75);
+                    ">
+            <a href="">Home</a>
+        </div>
+        <div style="    display:flex; 
+                        position: absolute; 
+                        width: 100%;
+                        margin-top: 15px;">
+            <img style="margin: 0% 5%;" src="dp.jpg" alt="DP" class="small-dp round">
+            <form style="   position: relative;
+                            height: 35vh;
+                            width: 100%;">
+            <textarea style="height: 20vh;
+                            width: 95%;
+                            color:lightgray;
+                            border-bottom: 1px solid rgb(75, 75, 75)" 
+                    maxlength="280" type="text" placeholder="Whats on your mind" class="autosize borderless bgnone"></textarea>
+            <div>
+            <input style="  position: absolute;
+                            margin-top: 10px;
+                            right: 0;
+                            margin-right: 5%;
+                            cursor:pointer;"  
+                    type="submit" value="Tweet" class="borderless b-radius padding bgaqua">
+            </div>
+            </form>
+        </div>
+        
+    </div>
+    <div class="aside">
+        <form class="search-form" >
+            <input style="  background-color: rgb(29,29,29); 
+                            color: lightgray"
+            type="search" placeholder="Search Twitter" class="borderless b-radius padding">
+            <input type="submit" style="cursor:pointer" value="Search" class="borderless b-radius padding bgaqua">
+        </form>
+    </div>
+
+   
+    
+    <script src="https://rawgit.com/jackmoore/autosize/master/dist/autosize.min.js"></script>
+   
+    <script>
+        autosize(document.querySelectorAll('.autosize'));
+    </script>
+</body>
+</html>
