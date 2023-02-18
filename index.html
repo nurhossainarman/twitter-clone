@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>My twitter</title>
 </head>
@@ -25,26 +27,12 @@
                     ">
             <a href="">Home</a>
         </div>
-        <div style="    display:flex; 
-                        position: absolute; 
-                        width: 100%;
-                        margin-top: 15px;">
-            <img style="margin: 0% 5%;" src="dp.jpg" alt="DP" class="small-dp round">
-            <form style="   position: relative;
-                            height: 35vh;
-                            width: 100%;">
-            <textarea style="height: 20vh;
-                            width: 95%;
-                            color:lightgray;
-                            border-bottom: 1px solid rgb(75, 75, 75)" 
-                    maxlength="280" type="text" placeholder="Whats on your mind" class="autosize borderless bgnone"></textarea>
+        <div class="d1">
+            <img src="dp.jpg" alt="DP" class="small-dp round imgMargin">
+            <form class="form1">
+            <textarea maxlength="280" type="text" placeholder="Whats on your mind" class="autosize borderless bgnone"></textarea>
             <div>
-            <input style="  position: absolute;
-                            margin-top: 10px;
-                            right: 0;
-                            margin-right: 5%;
-                            cursor:pointer;"  
-                    type="submit" value="Tweet" class="borderless b-radius padding bgaqua">
+            <input type="submit" value="Tweet" class="tweet-button borderless b-radius padding bgaqua">
             </div>
             </form>
         </div>
@@ -52,9 +40,7 @@
     </div>
     <div class="aside">
         <form class="search-form" >
-            <input style="  background-color: rgb(29,29,29); 
-                            color: lightgray"
-            type="search" placeholder="Search Twitter" class="borderless b-radius padding">
+            <input type="search" placeholder="Search Twitter" class="borderless b-radius padding">
             <input type="submit" style="cursor:pointer" value="Search" class="borderless b-radius padding bgaqua">
         </form>
     </div>
