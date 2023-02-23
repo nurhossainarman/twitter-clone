@@ -5,38 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>My twitter</title>
 </head>
 <body>
-    <div class="aside">
-        <ul style=" list-style: none; margin-left: 80px;">
-            <li><a href="#" >Home</a> </li>
+    <div class="aside" style="display: flex; justify-content: center;">
+        <ul style="list-style: none; width:fit-content;">
+            <li><a href="#" id="home" >Home</a> </li>
             <li><a href="#" >Notification</a> </li>
-            <li><a href="#" >Profile</a> </li>
+            <li><a href="#" id="profile" >Profile</a> </li>
             <li><a href="#" >Logout</a> </li>
             
         </ul>
     </div>
-    <div class="aside mid" id="home-content">
-        <div style= "height: 50px; 
+    <div class="aside mid">
+        <div  style= "height: 50px;
+                    padding-top: 10px; 
                     border-bottom: 1px solid rgb(75, 75, 75);
                     ">
-            <a href="">Home</a>
+            <a class="header" href="" style="padding: 0px 20px; font-weight: 700;">Home</a>
         </div>
-        <div class="d1">
+        <div class="profile-content">
+        
+        </div>
+
+
+        <div class="home-content">
+        <div class="d1 marginTop">
             <img src="dp.jpg" alt="DP" class="small-dp round imgMargin">
-            <form class="form1" id="tweet">
-            <textarea id="myTweet" maxlength="280" type="text" placeholder="Whats on your mind" class="textarea autosize tweet borderless bgnone"></textarea>
+            <form class="form1 postTweet" id="tweet">
+            
+            <textarea id="myTweet" maxlength="280" type="text" placeholder="What's happening?" class="textarea autosize tweet borderless bgnone"></textarea>
             <div>
             <input type="submit" value="Tweet" class="tweet-button borderless b-radius padding bgaqua">
             </div>
             </form>
         </div>
         <div class="closingLine"></div> <!--After tweet-->
+        <div id="myTweets">
+
+        </div>
+        </div>
         
         
     </div>
