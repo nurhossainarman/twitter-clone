@@ -89,15 +89,16 @@ function createPost(tweetText){
     // var retweetbtn = document.createElement("button");
     // retweetbtn.innerHTML= "Retweet";
     // retweetbtn.classList.add("btns");
-    // var likebtn = document.createElement("button");
-    // likebtn.innerHTML=  "Like";
+    var likebtn = document.createElement("button");
+    likebtn.classList.add("likebtn");
+    likebtn.innerHTML=  "Like";
     // likebtn.classList.add("btns");
     // var sharebtn = document.createElement("button");
     // sharebtn.innerHTML= "Share";
     // sharebtn.classList.add("btns");
     // tweetFooter.appendChild(replybtn);
     // tweetFooter.appendChild(retweetbtn);
-    // tweetFooter.appendChild(likebtn);
+    tweetFooter.appendChild(likebtn);
     // tweetFooter.appendChild(sharebtn);
 
     tweetBody.appendChild(tweetPara);
@@ -105,7 +106,7 @@ function createPost(tweetText){
     tweet.append(tweetUserName);
     tweet.appendChild(tweetTime);
     tweet.appendChild(tweetBody);
-    // tweet.appendChild(tweetFooter);
+    tweet.appendChild(tweetFooter);
     outerDiv.appendChild(img);
     form.appendChild(tweet);
     outerDiv.appendChild(form);
@@ -165,6 +166,7 @@ profile.addEventListener("click", function(e){
     homeContent.style.display= "none";
     
 })
+
 
 createProfile();
 updateTime();
