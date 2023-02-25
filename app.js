@@ -11,17 +11,17 @@ function updateTime(){
             var hours = Math.floor((b-a) / (1000*60*60)) ;
             var mins = Math.floor((b-a) / (1000*60));
             var sec = Math.floor((b-a) / (1000));
-            console.log(sec+"s");
+            
             if(sec < 60){
                 
                 e.innerHTML = "0m";
             }
             else if(mins > 59){
-                console.log(mins+"m");
+                
                 e.innerHTML = hours+"h";
             }
             else{
-                console.log(mins+"m");
+                
                 e.innerHTML = mins+"m";
             }
             });
@@ -35,11 +35,12 @@ home.addEventListener("click", function(e){
     header.innerHTML= "Home";
     profileContent.style.display = "none";
     homeContent.style.display= "block";
+    homeContent.appendChild(fetchTweets());
 
 })
 function createPost(tweetText){
     var outerDiv = document.createElement("div"); //Entire outer Div for tweet that will be returned
-    outerDiv.className= "d1 marginTop";
+    outerDiv.className= "d1 marginTop allTweets";
 
     var img = document.createElement("img"); // Display picture
     img.src="dp.jpg";
@@ -82,24 +83,38 @@ function createPost(tweetText){
 
     var tweetFooter = document.createElement("div");
     tweetFooter.classList.add("marginTop");
+    /* 
+    <div class="btn-group">
+  <button type="button" class="btn btn-danger">Action</button>
+  <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+    <span class="visually-hidden">Toggle Dropdown</span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#">Separated link</a></li>
+  </ul>
+</div>
 
-    // var replybtn = document.createElement("button");
-    // replybtn.innerHTML= "Reply";
-    // replybtn.classList.add("btns");
-    // var retweetbtn = document.createElement("button");
-    // retweetbtn.innerHTML= "Retweet";
-    // retweetbtn.classList.add("btns");
-    var likebtn = document.createElement("button");
+<div class="btn-group">
+  <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Small button
+  </button>
+  <ul class="dropdown-menu">
+    ...
+  </ul>
+</div>
+    */
+   var threeDots = document.createElement("button");
+   threeDots
+
+    var likebtn = document.createElement("button"); //like button
     likebtn.classList.add("likebtn");
-    likebtn.innerHTML=  "Like";
-    // likebtn.classList.add("btns");
-    // var sharebtn = document.createElement("button");
-    // sharebtn.innerHTML= "Share";
-    // sharebtn.classList.add("btns");
-    // tweetFooter.appendChild(replybtn);
-    // tweetFooter.appendChild(retweetbtn);
+    likebtn.innerHTML=  "0 Like";
+
     tweetFooter.appendChild(likebtn);
-    // tweetFooter.appendChild(sharebtn);
 
     tweetBody.appendChild(tweetPara);
     tweet.appendChild(tweetUser);
@@ -126,22 +141,23 @@ tweet.addEventListener("submit", function(e){
 })
 
 function createProfile(){
-    const profileBox = document.createElement("div"); //
+    const profileBox = document.createElement("div"); // upper portion with cover, dp, name, edit profile
     profileBox.classList.add("relativeDiv");
-    const profileCover = document.createElement("div"); //
+    profileBox.classList.add("profileBox");
+    const profileCover = document.createElement("div"); // cover
     profileCover.classList.add("profileCover");
-    const profileDp = document.createElement("img"); //
-    const editButton = document.createElement("button");
+    const profileDp = document.createElement("img"); // dp
+    const editButton = document.createElement("button"); //edit profile
     editButton.classList.add("editButton");
     editButton.innerHTML = "Edit profile";
     profileDp.src= "dp.jpg"; 
     profileDp.classList.add("profileDp");
     profileDp.classList.add("round");
     profileDp.classList.add("imgMargin");
-    const profileName = document.createElement("div");
+    const profileName = document.createElement("div"); //full name
     profileName.classList.add("profileFont");
     profileName.classList.add("fullName");
-    const profileUserName = document.createElement("div");
+    const profileUserName = document.createElement("div"); //username
     profileUserName.classList.add("profileFont");
     profileUserName.classList.add("userName");
     profileName.innerHTML = "Nur Hossain Arman";
@@ -152,7 +168,7 @@ function createProfile(){
     profileBox.appendChild(profileName);
     profileBox.appendChild(profileUserName);
     const profileContent = document.querySelector(".profile-content");
-    profileContent.appendChild(profileBox); 
+    profileContent.appendChild(profileBox);  //appending upper portion of profile
     profileContent.style.display = "none";
 }
 
@@ -164,9 +180,29 @@ profile.addEventListener("click", function(e){
     header.innerHTML= "Nur Hossain Arman";
     profileContent.style.display = "block";    
     homeContent.style.display= "none";
-    
+    profileContent.appendChild(fetchTweets());
 })
 
+function likeCount(){
+    setInterval(() => {
+        var likeButton = document.querySelectorAll(".likebtn");
+        likeButton.forEach(function(e){
+            e.onclick = function(event){
+                event.preventDefault();
+                var arr = e.innerHTML.split(" ");
+                var count = parseInt(arr[0])+1;
+                e.innerHTML = count+" Like";
+            }
+        })
+     }, 1000);
+}
 
+function fetchTweets(){
+    var allTweets = document.getElementById("myTweets");
+    
+    return allTweets;
+}
+
+likeCount();
 createProfile();
 updateTime();
