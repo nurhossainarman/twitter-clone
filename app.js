@@ -81,35 +81,15 @@ function createPost(tweetText){
     tweetPara.innerHTML= tweetText;
     tweetPara.classList.add("wordWrap");
 
-    var tweetFooter = document.createElement("div");
+    var tweetFooter = document.createElement("div"); // footer that contains like button
     tweetFooter.classList.add("marginTop");
-    /* 
-    <div class="btn-group">
-  <button type="button" class="btn btn-danger">Action</button>
-  <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-    <span class="visually-hidden">Toggle Dropdown</span>
-  </button>
-  <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="#">Action</a></li>
-    <li><a class="dropdown-item" href="#">Another action</a></li>
-    <li><a class="dropdown-item" href="#">Something else here</a></li>
-    <li><hr class="dropdown-divider"></li>
-    <li><a class="dropdown-item" href="#">Separated link</a></li>
-  </ul>
-</div>
 
-<div class="btn-group">
-  <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Small button
-  </button>
-  <ul class="dropdown-menu">
-    ...
-  </ul>
-</div>
-    */
-   var threeDots = document.createElement("button");
-   threeDots
-
+    // var deleteButton = document.createElement("button"); //delete tweet
+    // deleteButton.textContent = "Delete";
+    // deleteButton.style.position = "absolute";
+    // deleteButton.style.right = "0";
+    
+    
     var likebtn = document.createElement("button"); //like button
     likebtn.classList.add("likebtn");
     likebtn.innerHTML=  "0 Like";
@@ -120,6 +100,7 @@ function createPost(tweetText){
     tweet.appendChild(tweetUser);
     tweet.append(tweetUserName);
     tweet.appendChild(tweetTime);
+    // tweet.appendChild(deleteButton);
     tweet.appendChild(tweetBody);
     tweet.appendChild(tweetFooter);
     outerDiv.appendChild(img);
